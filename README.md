@@ -28,3 +28,19 @@ nfs_share="shared"
 # Unique extension for the keyvault name (e.g. kv234)
 keyvault_extension=
 ```
+# Fragen fuers nächste Meeting
+
+## Kann man kostenwarnung per bash einrichten?
+Siehe Datei 07_run_mpi_job.sh
+
+## Wie stellt man MicrosoftAzureBatch ein?
+Wie war mit Rechten, etc?
+
+## Empfohlene Vorgehensweiße um PALM JOB zu starten und auf mehrere Nodes zu starten
+Muessen wir erstmal rumspielen und rumtesten, aber da wäre hilfestellung sicher gut;
+
+## Wie greift man über ssh drauf zu? 
+War das über public ssh keys? Oder azure? Oder Passwörter?
+
+## Intern: Aufsetzen eigener Vorlage
+

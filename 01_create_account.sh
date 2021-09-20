@@ -25,6 +25,10 @@ az keyvault create \
     --enabled-for-template-deployment true
 
 # Add an access policy to the Key Vault to allow access by the Batch Service.
+# SPN: service principle name von Microsoft Azure Batch
+# https://docs.microsoft.com/en-us/cli/azure/keyvault?view=azure-cli-latest#az_keyvault_set_policy
+# https://docs.microsoft.com/en-us/azure/batch/batch-aad-auth
+
 az keyvault set-policy \
     --resource-group $batch_rg \
     --name ${batch_account_name}${keyvault_extension} \
@@ -42,7 +46,7 @@ az storage account create \
     --encryption-services blob
 
 # Find storage key
-storage_key=$( az storage account keys list --account-name "$storage_account_name" --resource-group batch-ws-rg --query [0].value  --output tsv )
+storage_key=$( az storage account keys list --account-name "$storage_account_name" --resource-group "$batch_rg" --query [0].value  --output tsv )
 echo $storage_key
 
 # Create storage container
