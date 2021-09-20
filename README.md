@@ -42,5 +42,7 @@ Muessen wir erstmal rumspielen und rumtesten, aber da wäre hilfestellung sicher
 ## Wie greift man über ssh drauf zu? 
 War das über public ssh keys? Oder azure? Oder Passwörter?
 
+## Resource Gruppe aus bash löschen?
+
 ## Intern: Aufsetzen eigener Vorlage
 
