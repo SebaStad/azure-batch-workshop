@@ -3,6 +3,8 @@
 # Variables
 source variables.sh
 
+# Poolvm size; F2; siehe bezeichungen;
+
 compute_subnet_id="/subscriptions/${subscription_id}/resourceGroups/${batch_rg}/providers/Microsoft.Network/virtualNetworks/${batch_vnet_name}/subnets/${compute_subnet_name}"
 pool_id="batch-ws-pool"
 pool_vm_size="STANDARD_F2s_v2"
@@ -10,12 +12,18 @@ nfs_share_hostname="${nfs_storage_account_name}.file.core.windows.net"
 nfs_share_directory="/${nfs_storage_account_name}/shared"
 
 # Define start task
+# start task ist wichtig, um zu sehen, ob knoten wirklich da sind
+# koennte schon more sophisticated sein;
+# healthcheck fuers system!
 read -r -d '' START_TASK << EOM
 /bin/bash -c hostname;env;pwd
 EOM
 
 # Create the pool definition JSON file
 # Define the batch pool
+
+# Python: kann man des json file evtl hinlegen und dann einfach anpassen
+# evtl gar nicht neue VM/ aufstellen für PALM, sondern PALM in den shared storage legen
 cat << EOF >  ${pool_id}.json
 {
   "id": "$pool_id",
@@ -66,8 +74,8 @@ az batch pool create \
     --json-file ${pool_id}.json
 
 # Look at the status of the batch pool
-echo "az pool show --pool-id $pool_id --query \"state\""
+echo "az batch pool show --pool-id $pool_id --query \"state\""
 
-az batch pool show --pool-id $pool_id \
+az batch pool show --pool-id $pool_id 
     --query "state"
 

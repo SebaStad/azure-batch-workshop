@@ -24,6 +24,9 @@ az storage account network-rule add \
     --vnet-name $batch_vnet_name \
     --subnet $compute_subnet_name
 
+# Quota in GB
+# Minimum is 100 GB
+# Je kleiner, desto unperformanter
 az storage share-rm create \
     --resource-group $batch_rg \
     --storage-account $nfs_storage_account_name \
@@ -31,3 +34,12 @@ az storage share-rm create \
     --quota 1024 \
     --enabled-protocols NFS \
     --root-squash NoRootSquash
+
+# Platte ist im Portal 
+# Workgroup -> Storagename -> Dateifreigabe (links)
+# Da sieht man, wie man die Platte auf Linux z.b. mounten wuerde
+
+# jetzt:
+# batchaccoutn da
+# storage ist da
+# jetzt: Pool (kostet geld :)

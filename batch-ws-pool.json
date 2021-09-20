@@ -1,0 +1,42 @@
+{
+  "id": "batch-ws-pool",
+  "vmSize": "STANDARD_F2s_v2",
+  "virtualMachineConfiguration": {
+       "imageReference": {
+            "publisher": "openlogic",
+            "offer": "centos-hpc",
+            "sku": "7.7",
+            "version": "latest"
+        },
+        "nodeAgentSkuId": "batch.node.centos 7"
+    },
+  "targetDedicatedNodes": 2,
+  "enableInterNodeCommunication": true,
+  "networkConfiguration": {
+    "subnetId": "/subscriptions/6df60915-1aa4-4ff5-bc75-f9d0b487fcb3/resourceGroups/batch-ws-rg/providers/Microsoft.Network/virtualNetworks/batch-ws-vnet/subnets/compute"
+  },
+  "maxTasksPerNode": 1,
+  "taskSchedulingPolicy": {
+    "nodeFillType": "Pack"
+  },
+  "mountConfiguration": [
+      {
+          "nfsMountConfiguration": {
+              "source": "batchwsnfssa1137.file.core.windows.net://batchwsnfssa1137/shared",
+              "relativeMountPath": "shared",
+              "mountOptions": "-o rw,hard,rsize=65536,wsize=65536,vers=4,minorversion=1,tcp,sec=sys"
+          }
+      }
+  ],
+  "startTask": {
+    "commandLine":"/bin/bash -c hostname;env;pwd",
+    "userIdentity": {
+        "autoUser": {
+          "scope":"pool",
+          "elevationLevel":"admin"
+        }
+    },
+    "maxTaskRetryCount":1,
+    "waitForSuccess":true
+  }
+}

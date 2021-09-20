@@ -4,6 +4,9 @@
 source variables.sh
 
 # Allow Azure Batch to access the subscription (one-time operation).
+# We tried doing this in the portal? 
+# Dirk: assignee MicrosoftazureBatch existiert so nicht, 
+# wir haben des Feature im Portal aktiviert und ihm Rechte gegeben
 az role assignment create \
     --assignee MicrosoftAzureBatch \
     --role contributor

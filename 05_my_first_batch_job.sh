@@ -6,6 +6,7 @@ source variables.sh
 pool_id="batch-ws-pool"
 
 # Create job
+# job = container fuer tasks
 az batch job create \
     --id my-first-batch-job \
     --pool-id ${pool_id}
@@ -19,7 +20,7 @@ do
     --command-line "/bin/bash -c 'printenv | grep AZ_BATCH; sleep 90s'"
 done
 
-# List taks
+# List task
 az batch task file list \
     --job-id my-first-batch-job \
     --task-id mytask1 \

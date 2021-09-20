@@ -40,3 +40,8 @@ az batch task file download \
     --task-id mpi-task \
     --file-path stderr.txt \
     --destination ./mpi-stderr.txt
+
+
+
+# First thing to do in Subscription!
+# subscription: kostenwarnungen anlegen!

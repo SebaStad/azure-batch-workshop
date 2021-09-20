@@ -1,0 +1,43 @@
+AZ_BATCH_TASK_DIR=/mnt/resource/batch/tasks/workitems/my-first-mpi-job/job-1/mpi-task
+CCP_NODES_CORES=2 10.0.0.4 2 10.0.0.5 2
+CCP_NODES=2 10.0.0.4 1 10.0.0.5 1
+USER=_azbatch
+AZ_BATCH_RESERVED_EPHEMERAL_DISK_SPACE_BYTES=1000000000
+AZ_BATCH_NODE_STARTUP_DIR=/mnt/resource/batch/tasks/startup
+AZ_BATCH_TASK_SHARED_DIR=/mnt/resource/batch/tasks/workitems/my-first-mpi-job/job-1/mpi-task
+AZ_BATCH_MASTER_NODE=10.0.0.4:6000
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/mnt/resource/batch/tasks/shared:/mnt/resource/batch/tasks/workitems/my-first-mpi-job/job-1/mpi-task/wd
+_=/usr/bin/env
+AZ_BATCH_OS_RESERVED_EPHEMERAL_DISK_SPACE_BYTES=1000000000
+NODES=2
+AZ_BATCH_CERTIFICATES_DIR=/mnt/resource/batch/tasks/workitems/my-first-mpi-job/job-1/mpi-task/certs
+AZ_BATCH_IS_CURRENT_NODE_MASTER=true
+PWD=/mnt/resource/batch/tasks/workitems/my-first-mpi-job/job-1/mpi-task/wd
+AZ_BATCH_ACCOUNT_URL=https://batchwsacc511.westeurope.batch.azure.com/
+AZ_BATCH_MTC_CONNECTION_TIMEOUT=600
+AZ_BATCH_TASK_WORKING_DIR=/mnt/resource/batch/tasks/workitems/my-first-mpi-job/job-1/mpi-task/wd
+AZ_BATCH_NODE_SHARED_DIR=/mnt/resource/batch/tasks/shared
+AZ_BATCH_MTC_BACKGROUND_CMD=/bin/bash -c env
+AZ_BATCH_NODE_LIST=10.0.0.4;10.0.0.5
+HOME=/mnt/resource/batch/tasks/workitems/my-first-mpi-job/job-1/mpi-task/wd
+SHLVL=2
+AZ_BATCH_NODE_ROOT_DIR=/mnt/resource/batch/tasks
+PPN=2
+AZ_BATCH_TASK_USER=_azbatch
+AZ_BATCH_NODE_IS_DEDICATED=true
+AZ_BATCH_JOB_ID=my-first-mpi-job
+AZ_BATCH_NODE_STARTUP_WORKING_DIR=/mnt/resource/batch/tasks/startup/wd
+AZ_BATCH_MTC_APPLICATION_CMD=/bin/bash -c '$AZ_BATCH_APP_PACKAGE_mpi_batch_1_0_0/mpi_batch/run_mpi.sh'
+AZ_BATCH_NODE_MOUNTS_DIR=/mnt/resource/batch/tasks/fsmounts
+AZ_BATCH_NODE_ID=tvmps_5f6625c92131cd89df8de4f9812d7ca93b90d87e4268eb55478f8c92920172f3_d
+AZ_BATCH_APP_PACKAGE_mpi_batch_1_0_0=/mnt/resource/batch/tasks/applications/mpi_batch1.0.02021-08-10-14-05
+AZ_BATCH_POOL_ID=batch-ws-pool
+AZ_BATCH_TASK_ID=mpi-task
+AZ_BATCH_ACCOUNT_NAME=batchwsacc511
+AZ_BATCH_RESERVED_DISK_SPACE_BYTES=1000000000
+AZ_BATCH_TASK_USER_IDENTITY=PoolNonAdmin
+AZ_BATCH_HOST_LIST=10.0.0.4,10.0.0.5
+Src: 10.0.0.5
+Dst: 10.0.0.4
+Hello world from processor 03b45f9881b2430588fe63c968d68214000000, rank 0 out of 2 processors
+Hello world from processor 03b45f9881b2430588fe63c968d68214000001, rank 1 out of 2 processors
